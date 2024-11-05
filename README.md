@@ -40,8 +40,9 @@ composer install
 <?php
 
 use PragmaGoTech\Interview\Model\LoanProposal;
+use PragmaGoTech\Interview\FeeCalculator\RoundedFeeCalculator;
 
-$calculator = new FeeCalculator();
+$calculator = new RoundedFeeCalculator();
 
 $application = new LoanProposal(24, 2750);
 $fee = $calculator->calculate($application);
