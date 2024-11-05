@@ -9,7 +9,7 @@ use PragmaGoTech\Interview\FeeCalculator\Model\LoanTerm;
 final class PhpFileFeeStructureProvider implements FeeStructureProviderInterface
 {
     private const array FEE_STRUCTURES = [
-        LoanTerm::MOTHNS_12->value => [
+        LoanTerm::MONTHS_12->value => [
             1000 => 50,
             2000 => 90,
             3000 => 90,
@@ -31,7 +31,7 @@ final class PhpFileFeeStructureProvider implements FeeStructureProviderInterface
             19000 => 380,
             20000 => 400
         ],
-        LoanTerm::MOTHNS_24->value => [
+        LoanTerm::MONTHS_24->value => [
             1000 => 70,
             2000 => 100,
             3000 => 120,

@@ -39,63 +39,14 @@ composer install
 ```php
 <?php
 
-use PragmaGoTech\Interview\Model\LoanProposal;
+use PragmaGoTech\Interview\FeeCalculator\Model\LoanProposal;
+use PragmaGoTech\Interview\FeeCalculator\Factory\RoundedFeeCalculatorFactory;
+use PragmaGoTech\Interview\FeeCalculator\Model\LoanTerm;
+use PragmaGoTech\Interview\FeeCalculator\ValueObject\Amount;
 
-$calculator = new FeeCalculator();
+$calculator = RoundedFeeCalculatorFactory::create();
 
-$application = new LoanProposal(24, 2750);
-$fee = $calculator->calculate($application);
+$application = new LoanProposal(LoanTerm::MONTHS_24, new Amount(2750));
+$fee = $calculator->calculate($application)->value;
 // $fee = (float) 115.0
-```
-
-# Fee Structure
-The fee structure doesn't follow particular algorithm and it is possible that same fee will be applicable for different amounts.
-
-### Term 12
-```
-1000 PLN: 50 PLN
-2000 PLN: 90 PLN
-3000 PLN: 90 PLN
-4000 PLN: 115 PLN
-5000 PLN: 100 PLN
-6000 PLN: 120 PLN
-7000 PLN: 140 PLN
-8000 PLN: 160 PLN
-9000 PLN: 180 PLN
-10000 PLN: 200 PLN
-11000 PLN: 220 PLN
-12000 PLN: 240 PLN
-13000 PLN: 260 PLN
-14000 PLN: 280 PLN
-15000 PLN: 300 PLN
-16000 PLN: 320 PLN
-17000 PLN: 340 PLN
-18000 PLN: 360 PLN
-19000 PLN: 380 PLN
-20000 PLN: 400 PLN
-```
-
-### Term 24
-
-```
-1000 PLN: 70 PLN
-2000 PLN: 100 PLN
-3000 PLN: 120 PLN
-4000 PLN: 160 PLN
-5000 PLN: 200 PLN
-6000 PLN: 240 PLN
-7000 PLN: 280 PLN
-8000 PLN: 320 PLN
-9000 PLN: 360 PLN
-10000 PLN: 400 PLN
-11000 PLN: 440 PLN
-12000 PLN: 480 PLN
-13000 PLN: 520 PLN
-14000 PLN: 560 PLN
-15000 PLN: 600 PLN
-16000 PLN: 640 PLN
-17000 PLN: 680 PLN
-18000 PLN: 720 PLN
-19000 PLN: 760 PLN
-20000 PLN: 800 PLN
 ```

@@ -93,7 +93,7 @@ final class InterpolatedFeeCalculatorTest extends TestCase
 
     public function testShouldFailWhenLoanAmountIsLowerThanLowestLoanAmountInStructure(): void
     {
-        $loanTerm = LoanTerm::MOTHNS_24;
+        $loanTerm = LoanTerm::MONTHS_24;
 
         $this->feeStructureProvider
             ->expects(self::once())
@@ -108,7 +108,7 @@ final class InterpolatedFeeCalculatorTest extends TestCase
 
     public function testShouldFailWhenLoanAmountIsGreaterThanLowestLoanAmountInStructure(): void
     {
-        $loanTerm = LoanTerm::MOTHNS_24;
+        $loanTerm = LoanTerm::MONTHS_24;
 
         $this->feeStructureProvider
             ->expects(self::once())
@@ -123,7 +123,7 @@ final class InterpolatedFeeCalculatorTest extends TestCase
 
     public function testShouldFailWhenThereIsNoStructureForCalculating(): void
     {
-        $loanTerm = LoanTerm::MOTHNS_24;
+        $loanTerm = LoanTerm::MONTHS_24;
 
         $this->feeStructureProvider
             ->expects(self::once())
