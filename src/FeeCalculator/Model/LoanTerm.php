@@ -6,6 +6,6 @@ namespace PragmaGoTech\Interview\FeeCalculator\Model;
 
 enum LoanTerm: int
 {
-    case MOTHNS_12 = 12;
-    case MOTHNS_24 = 24;
+    case MONTHS_12 = 12;
+    case MONTHS_24 = 24;
 }

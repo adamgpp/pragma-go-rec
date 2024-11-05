@@ -26,7 +26,7 @@ final class LoanProposalTest extends TestCase
     #[DataProvider('provideProperLoanAmounts')]
     public function testShouldProperlyCreateLoanProposalInstance(float $loanAmount): void
     {
-        $instance = new LoanProposal(LoanTerm::MOTHNS_12, new Amount($loanAmount));
+        $instance = new LoanProposal(LoanTerm::MONTHS_12, new Amount($loanAmount));
 
         self::assertInstanceOf(LoanProposal::class, $instance);
     }
@@ -45,6 +45,6 @@ final class LoanProposalTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Loan amount must be greater than or equal to 1 000 and lower than or equal to 20 000.');
 
-        new LoanProposal(LoanTerm::MOTHNS_12, new Amount($loanAmount));
+        new LoanProposal(LoanTerm::MONTHS_12, new Amount($loanAmount));
     }
 }
