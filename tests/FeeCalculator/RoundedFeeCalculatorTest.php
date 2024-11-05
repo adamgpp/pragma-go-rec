@@ -17,6 +17,7 @@ use PragmaGoTech\Interview\FeeCalculator\ValueObject\Amount;
 final class RoundedFeeCalculatorTest extends TestCase
 {
     private readonly RoundedFeeCalculator $calculator;
+
     private readonly InterpolatedFeeCalculator $interpolatedFeeCalculator;
     private readonly UpToNearestFiveFeeRoundingService $roundingService;
 

@@ -21,7 +21,7 @@ final class UpToNearestFiveFeeRoundingServiceTest extends TestCase
 
     public static function provideRawFees(): \Generator
     {
-        yield 'without roundng' => [1234, 1, 1];
+        yield 'without rounding' => [1234, 1, 1];
         yield 'with rounding' => [1235, 1, 5];
         yield 'with rounding and one decimal point' => [1235.1, 1.1, 4.9];
         yield 'with rounding and two decimal points' => [1235.99, 1.01, 4.01];

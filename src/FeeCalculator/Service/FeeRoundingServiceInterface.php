@@ -8,5 +8,5 @@ use PragmaGoTech\Interview\FeeCalculator\ValueObject\Amount;
 
 interface FeeRoundingServiceInterface
 {
-    public function roundFee(Amount $amount, Amount $rawFee): Amount;
+    public function roundFee(Amount $loanAmount, Amount $rawFee): Amount;
 }

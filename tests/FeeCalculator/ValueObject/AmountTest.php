@@ -33,7 +33,7 @@ final class AmountTest extends TestCase
     public function testShouldFailWhenInvalidValueGiven(): void
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Value must be greater than or equalto 0.');
+        $this->expectExceptionMessage('Value must be greater than or equal to 0.');
 
         new Amount(-0.01);
     }
