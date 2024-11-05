@@ -35,6 +35,7 @@ final class RoundedFeeCalculatorTest extends TestCase
         return [
             [24, 11_500, 460.0],
             [12, 19_250, 385.0],
+            [24, 2_750, 115.0],
         ];
     }
 
